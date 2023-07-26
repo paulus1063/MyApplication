@@ -3,6 +3,11 @@ import java.time.LocalTime;
 public class MyApplication {
     public static void main(String[] args) {
 
+        final int START_OF_THE_DAY = 6;
+        final int NOON = 12;
+        final int START_OF_THE_EVENING = 18;
+        final int START_OF_THE_NIGHT = 21;
+
         String coreGreeting = "Pozdrawiam wszystkich na kursie JOP";
 
         String normalGreeting = ", miłego dnia!";
@@ -14,11 +19,11 @@ public class MyApplication {
         int currentHour = lt.getHour();
         String timeOfDay;
 
-        if (currentHour >= 6 && currentHour < 13) {
-            timeOfDay = "eve";
-        } else if (currentHour >= 13 && currentHour < 18) {
+        if (currentHour >= START_OF_THE_DAY && currentHour < NOON) {
+            timeOfDay = "morning";
+        } else if (currentHour >= NOON && currentHour < START_OF_THE_EVENING) {
             timeOfDay = "afternoon";
-        } else if (currentHour >= 18 && currentHour < 22) {
+        } else if (currentHour >= START_OF_THE_EVENING && currentHour < START_OF_THE_NIGHT) {
             timeOfDay = "evening";
         } else {
             timeOfDay = "night";
@@ -26,7 +31,7 @@ public class MyApplication {
 
         switch (timeOfDay) {
 
-            case "eve":
+            case "morning":
                 System.out.println(coreGreeting.concat(normalGreeting));
                 break;
             case "afternoon":
