@@ -9,7 +9,7 @@ public class MyApplication {
         String afternoonGreeting = ", udanego popołudnia!";
         String eveningGreeting = ", miłego wieczoru!";
         String nightGreeting = ", dobrej nocy!";
-        LocalTime lt = LocalTime.now();
+        LocalTime lt = LocalTime.now(); //https://kamakaczmarek.net/12-java-obsluga-daty-i-czasu/
 
         int currentHour = lt.getHour();
         String timeOfDay;
