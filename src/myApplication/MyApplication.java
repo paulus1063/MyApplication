@@ -1,3 +1,5 @@
+package myApplication;
+
 import java.time.LocalTime;
 
 class MyApplication {
@@ -5,7 +7,7 @@ class MyApplication {
         String timeOfDay = specifyTimeOfDay();
         String greeting = selectGreeting(timeOfDay);
         System.out.println(greeting);
-//      Lub alternatywnie zamiast wierszy 6, 7 i 8 wiersz poniżej
+//      Lub alternatywnie zamiast trzech wierszy powyżej wiersz poniżej
 //        System.out.println(selectGreeting(specifyTimeOfDay()));
     }
 
