@@ -18,7 +18,7 @@ class MyApplication {
         final int START_OF_THE_NIGHT = 21;
         String timeOfDay;
 
-        LocalTime lt = LocalTime.now();
+        LocalTime lt = LocalTime.now(); //https://kamakaczmarek.net/12-java-obsluga-daty-i-czasu/
         int currentHour = lt.getHour();
 
         if (currentHour >= START_OF_THE_DAY && currentHour < NOON) {
