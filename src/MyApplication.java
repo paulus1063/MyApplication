@@ -1,23 +1,23 @@
 import java.time.LocalTime;
 
-public class MyApplication {
+class MyApplication {
     public static void main(String[] args) {
+        String timeOfDay = specifyTimeOfDay();
+        String greeting = selectGreeting(timeOfDay);
+        System.out.println(greeting);
+//      Lub alternatywnie zamiast wierszy 6, 7 i 8 wiersz poniżej
+//        System.out.println(selectGreeting(specifyTimeOfDay()));
+    }
 
+    private static String specifyTimeOfDay() {
         final int START_OF_THE_DAY = 6;
         final int NOON = 12;
         final int START_OF_THE_EVENING = 18;
         final int START_OF_THE_NIGHT = 21;
-
-        String coreGreeting = "Pozdrawiam wszystkich na kursie JOP";
-
-        String normalGreeting = ", miłego dnia!";
-        String afternoonGreeting = ", udanego popołudnia!";
-        String eveningGreeting = ", miłego wieczoru!";
-        String nightGreeting = ", dobrej nocy!";
-        LocalTime lt = LocalTime.now(); //https://kamakaczmarek.net/12-java-obsluga-daty-i-czasu/
-
-        int currentHour = lt.getHour();
         String timeOfDay;
+
+        LocalTime lt = LocalTime.now();
+        int currentHour = lt.getHour();
 
         if (currentHour >= START_OF_THE_DAY && currentHour < NOON) {
             timeOfDay = "morning";
@@ -29,19 +29,31 @@ public class MyApplication {
             timeOfDay = "night";
         }
 
-        switch (timeOfDay) {
+        return timeOfDay;
+    }
 
+    private static String selectGreeting(String timeOfDay) {
+        String coreGreeting = "Pozdrawiam wszystkich na kursie JOP";
+        String normalGreeting = ", miłego dnia!";
+        String afternoonGreeting = ", udanego popołudnia!";
+        String eveningGreeting = ", miłego wieczoru!";
+        String nightGreeting = ", dobrej nocy!";
+        String greeting = coreGreeting;
+
+        switch (timeOfDay) {
             case "morning":
-                System.out.println(coreGreeting.concat(normalGreeting));
+                greeting = coreGreeting.concat(normalGreeting);
                 break;
             case "afternoon":
-                System.out.println(coreGreeting.concat(afternoonGreeting));
+                greeting = coreGreeting.concat(afternoonGreeting);
                 break;
             case "evening":
-                System.out.println(coreGreeting.concat(eveningGreeting));
+                greeting = coreGreeting.concat(eveningGreeting);
                 break;
             case "night":
-                System.out.println(coreGreeting.concat(nightGreeting));
+                greeting = coreGreeting.concat(nightGreeting);
+                break;
         }
+        return greeting;
     }
 }
