@@ -1,4 +1,4 @@
-package myApplication;
+package main.myApplication;
 
 import java.time.LocalTime;
 
