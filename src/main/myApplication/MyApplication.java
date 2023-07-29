@@ -2,7 +2,7 @@ package main.myApplication;
 
 import java.time.LocalTime;
 
-class MyApplication {
+public class MyApplication {
     public static void main(String[] args) {
         String timeOfDay = specifyTimeOfDay();
         String greeting = selectGreeting(timeOfDay);
@@ -34,7 +34,7 @@ class MyApplication {
         return timeOfDay;
     }
 
-    private static String selectGreeting(String timeOfDay) {
+    public static String selectGreeting(String timeOfDay) {
         String coreGreeting = "Pozdrawiam wszystkich na kursie JOP";
         String normalGreeting = ", miłego dnia!";
         String afternoonGreeting = ", udanego popołudnia!";
