@@ -10,15 +10,15 @@ class TestMyApplication {
     @Test
     void shouldShowProperGreeting() {
 
-        //given
+        //Given
         String timeOfDay = "morning";
 
-        //when
+        //When
         String result = selectGreeting(timeOfDay);
 
         String expectedResult = "Pozdrawiam wszystkich na kursie JOP, miłego dnia!";
 
-        //then
+        //Then
         Assertions.assertEquals(expectedResult, result);
     }
 }
